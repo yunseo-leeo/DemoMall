@@ -1,6 +1,6 @@
 package com.example.mall.domain;
 
-public enum ProductStatus {
+public enum ArticleStatus {
     AVAILABLE,
     SOLD_OUT,
     DISCONTINUED

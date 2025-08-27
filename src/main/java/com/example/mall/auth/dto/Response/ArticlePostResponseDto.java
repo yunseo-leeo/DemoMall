@@ -1,9 +1,8 @@
 package com.example.mall.auth.dto.Response;
 
 import com.example.mall.domain.Entity.Seller;
+import com.example.mall.domain.Entity.User;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,18 +14,16 @@ import java.time.LocalDateTime;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductPostResponseDto {
+public class ArticlePostResponseDto {
 
-    @JsonProperty("productId")
+    @JsonProperty("ArticleId")
     private Long id;
 
-    private Integer productPrice;
+    private String title;
 
-    private String productName;
+    private String content;
 
-    private String productDescription;
-
-    private Seller seller;
+    private User user;
 
     private LocalDateTime createTime;
 

@@ -72,7 +72,7 @@ public class ArticleServiceImpl implements ArticleService {
     public ArticleUpdateResponseDto updateArticle(Long id, ArticleUpdateRequestDto articleUpdateRequestDto){
 
         Article article = articleRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("존재하지않는 게시물입니다."));
+                .orElseThrow(() -> new NoSuchElementException("존재하지 않는 게시물입니다."));
 
         return articleMapper.toUpdateDto(articleUpdateRequestDto, article);
     }

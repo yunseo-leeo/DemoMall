@@ -1,6 +1,5 @@
 package com.example.mall.auth.dto.Response;
 
-import com.example.mall.domain.Entity.Seller;
 import com.example.mall.domain.ArticleStatus;
 import com.example.mall.domain.Entity.User;
 import com.fasterxml.jackson.annotation.JsonProperty;

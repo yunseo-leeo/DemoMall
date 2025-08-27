@@ -2,9 +2,11 @@ package com.example.mall.controller;
 
 import com.example.mall.auth.dto.Request.ArticlePostRequestDto;
 import com.example.mall.auth.dto.Request.ArticleSearchRequestDto;
+import com.example.mall.auth.dto.Request.ArticleUpdateRequestDto;
 import com.example.mall.auth.dto.Response.ArticleDetailResponseDto;
 import com.example.mall.auth.dto.Response.ArticlePostResponseDto;
 import com.example.mall.auth.dto.Response.ArticleSearchResponseDto;
+import com.example.mall.auth.dto.Response.ArticleUpdateResponseDto;
 import com.example.mall.service.ServiceInterface.ArticleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -40,6 +42,14 @@ public class ArticleController {
 
         return articleService.searchArticle(articleSearchRequestDto, pageable);
     }
-    )
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<ArticleUpdateResponseDto> updateArticle(
+            @PathVariable Long id,
+            @Valid @RequestBody ArticleUpdateRequestDto articleUpdateRequestDto){
+        ArticleUpdateResponseDto articleUpdateResponseDto = articleService.updateArticle(id, articleUpdateRequestDto);
+        return ResponseEntity.ok(articleUpdateResponseDto);
+    }
+
     
 }

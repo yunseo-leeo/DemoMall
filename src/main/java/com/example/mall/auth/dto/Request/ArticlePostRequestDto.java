@@ -1,11 +1,9 @@
 package com.example.mall.auth.dto.Request;
 
 import com.example.mall.domain.ArticleStatus;
-import com.example.mall.domain.Entity.Seller;
 import com.example.mall.domain.Entity.User;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

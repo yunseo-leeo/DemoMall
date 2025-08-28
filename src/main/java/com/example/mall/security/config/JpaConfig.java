@@ -1,4 +1,4 @@
-package com.example.mall.config;
+package com.example.mall.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;

@@ -1,6 +1,6 @@
 package com.example.mall.repository;
 
-import com.example.mall.auth.dto.Request.ArticleSearchRequestDto;
+import com.example.mall.auth.Request.ArticleSearchRequestDto;
 import com.example.mall.domain.Entity.Article;
 import com.example.mall.domain.Entity.QArticle;
 import com.example.mall.domain.Entity.QUser;

@@ -1,4 +1,4 @@
-package com.example.mall.auth.dto.Request;
+package com.example.mall.auth.Request;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

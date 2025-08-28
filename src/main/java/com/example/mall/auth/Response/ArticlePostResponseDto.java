@@ -1,4 +1,4 @@
-package com.example.mall.auth.dto.Response;
+package com.example.mall.auth.Response;
 
 import com.example.mall.domain.Entity.User;
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,12 +1,12 @@
 package com.example.mall.controller;
 
-import com.example.mall.auth.dto.Request.ArticlePostRequestDto;
-import com.example.mall.auth.dto.Request.ArticleSearchRequestDto;
-import com.example.mall.auth.dto.Request.ArticleUpdateRequestDto;
-import com.example.mall.auth.dto.Response.ArticleDetailResponseDto;
-import com.example.mall.auth.dto.Response.ArticlePostResponseDto;
-import com.example.mall.auth.dto.Response.ArticleSearchResponseDto;
-import com.example.mall.auth.dto.Response.ArticleUpdateResponseDto;
+import com.example.mall.auth.Request.ArticlePostRequestDto;
+import com.example.mall.auth.Request.ArticleSearchRequestDto;
+import com.example.mall.auth.Request.ArticleUpdateRequestDto;
+import com.example.mall.auth.Response.ArticleDetailResponseDto;
+import com.example.mall.auth.Response.ArticlePostResponseDto;
+import com.example.mall.auth.Response.ArticleSearchResponseDto;
+import com.example.mall.auth.Response.ArticleUpdateResponseDto;
 import com.example.mall.service.ServiceInterface.ArticleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

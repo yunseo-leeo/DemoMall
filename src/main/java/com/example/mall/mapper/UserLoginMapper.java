@@ -1,7 +1,7 @@
 package com.example.mall.mapper;
 
-import com.example.mall.auth.dto.Request.UserLoginRequestDto;
-import com.example.mall.auth.dto.Response.UserLoginResponseDto;
+import com.example.mall.auth.Request.UserLoginRequestDto;
+import com.example.mall.auth.Response.UserLoginResponseDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

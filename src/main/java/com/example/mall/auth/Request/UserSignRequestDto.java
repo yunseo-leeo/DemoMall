@@ -1,4 +1,4 @@
-package com.example.mall.auth.dto.Request;
+package com.example.mall.auth.Request;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;

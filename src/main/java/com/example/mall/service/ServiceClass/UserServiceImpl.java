@@ -2,10 +2,10 @@ package com.example.mall.service.ServiceClass;
 
 import com.example.mall.domain.Entity.User;
 import com.example.mall.security.JwtTokenProvider;
-import com.example.mall.auth.dto.Request.UserLoginRequestDto;
-import com.example.mall.auth.dto.Request.UserSignRequestDto;
-import com.example.mall.auth.dto.Response.UserLoginResponseDto;
-import com.example.mall.auth.dto.Response.UserSignResponseDto;
+import com.example.mall.auth.Request.UserLoginRequestDto;
+import com.example.mall.auth.Request.UserSignRequestDto;
+import com.example.mall.auth.Response.UserLoginResponseDto;
+import com.example.mall.auth.Response.UserSignResponseDto;
 import com.example.mall.mapper.UserSignMapper;
 import com.example.mall.service.ServiceInterface.UserService;
 import lombok.RequiredArgsConstructor;

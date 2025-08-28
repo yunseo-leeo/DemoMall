@@ -16,6 +16,7 @@ import com.example.mall.service.ServiceInterface.ArticleService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -75,5 +76,22 @@ public class ArticleServiceImpl implements ArticleService {
                 .orElseThrow(() -> new NoSuchElementException("존재하지 않는 게시물입니다."));
 
         return articleMapper.toUpdateDto(articleUpdateRequestDto, article);
+    }
+
+    @Override
+    @Transactional
+    public void deleteArticle(Long articleId, String userEmail) {
+
+        Article article = articleRepository.findById(articleId)
+                .orElseThrow(() -> new NoSuchElementException("일치하는 게시물이 존재하지 않습니다."));
+
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new NoSuchElementException("회원님의 로그인에 오류가 존재합니다."));
+
+        Boolean isUser = article.getUser() != null && article.getUser().getId().equals(user.getId());
+
+        if (!isUser){throw new AccessDeniedException("삭제 권한이 없습니다.");}
+
+        articleRepository.delete(article);
     }
 }

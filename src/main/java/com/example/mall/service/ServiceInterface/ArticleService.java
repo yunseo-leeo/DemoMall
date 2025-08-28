@@ -19,4 +19,6 @@ public interface ArticleService {
     Page<ArticleSearchResponseDto> searchArticle(ArticleSearchRequestDto articleSearchRequestDto, Pageable pageable);
 
     ArticleUpdateResponseDto updateArticle(Long id, ArticleUpdateRequestDto articleUpdateRequestDto);
+
+    void deleteArticle(Long id, String userEmail);
 }

@@ -7,6 +7,7 @@ import com.example.mall.auth.Response.ArticleDetailResponseDto;
 import com.example.mall.auth.Response.ArticlePostResponseDto;
 import com.example.mall.auth.Response.ArticleSearchResponseDto;
 import com.example.mall.auth.Response.ArticleUpdateResponseDto;
+import com.example.mall.security.CustomUserDetails;
 import com.example.mall.service.ServiceInterface.ArticleService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +15,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -49,6 +52,19 @@ public class ArticleController {
             @Valid @RequestBody ArticleUpdateRequestDto articleUpdateRequestDto){
         ArticleUpdateResponseDto articleUpdateResponseDto = articleService.updateArticle(id, articleUpdateRequestDto);
         return ResponseEntity.ok(articleUpdateResponseDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteArticle(
+            @PathVariable Long id,
+            @AuthenticationPrincipal CustomUserDetails user) {
+
+        if(user == null){
+            throw new AccessDeniedException("사용자 인증이 필요합니다");
+        }
+
+        articleService.deleteArticle(id, user.getUser().getEmail());
+        return ResponseEntity.noContent().build();
     }
 
     

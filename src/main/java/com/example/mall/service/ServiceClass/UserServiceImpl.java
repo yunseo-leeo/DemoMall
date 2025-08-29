@@ -3,6 +3,7 @@ package com.example.mall.service.ServiceClass;
 import com.example.mall.auth.Request.UserRequestDto.UserUpdateRequestDto;
 import com.example.mall.auth.Response.UserResponseDto.UserUpdateResponseDto;
 import com.example.mall.domain.Entity.User;
+import com.example.mall.mapper.UserMapper;
 import com.example.mall.security.JwtTokenProvider;
 import com.example.mall.auth.Request.UserRequestDto.UserLoginRequestDto;
 import com.example.mall.auth.Request.UserRequestDto.UserSignRequestDto;
@@ -27,6 +28,7 @@ public class UserServiceImpl implements UserService {
     private final UserSignMapper userSignMapper;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
+    private final UserMapper userMapper;
 
     @Override
     @Transactional
@@ -71,7 +73,12 @@ public class UserServiceImpl implements UserService {
 
     public UserUpdateResponseDto UpdateUser(Long id, UserUpdateRequestDto userUpdateRequestDto){
 
-        User user = userRepository.findByEmail()
+        User user = userRepository.findById(id)
+                .orElseThrow(() ->new UsernameNotFoundException("사용자 정보가 존재하지 않습니다."));
+
+        userMapper.toUpdateFromDto(userUpdateRequestDto, user);
+
+        return userMapper.toUpdateDto(user);
     }
 
 

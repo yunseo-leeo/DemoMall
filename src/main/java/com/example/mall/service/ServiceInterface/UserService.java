@@ -12,5 +12,5 @@ public interface UserService {
     UserSignResponseDto RegisterUser(UserSignRequestDto userSignRequestDto);
     UserLoginResponseDto LoginUser(UserLoginRequestDto userLoginRequestDto);
 
-    UserUpdateResponseDto UpdateUser(UserUpdateRequestDto userUpdateRequestDto);
+    UserUpdateResponseDto UpdateUser(Long id, UserUpdateRequestDto userUpdateRequestDto);
 }

@@ -1,8 +1,8 @@
 package com.example.mall.mapper;
 
 import com.example.mall.domain.Entity.User;
-import com.example.mall.auth.Request.UserSignRequestDto;
-import com.example.mall.auth.Response.UserSignResponseDto;
+import com.example.mall.auth.Request.UserRequestDto.UserSignRequestDto;
+import com.example.mall.auth.Response.UserResponseDto.UserSignResponseDto;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

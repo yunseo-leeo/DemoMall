@@ -1,9 +1,9 @@
 package com.example.mall.service.ServiceInterface;
 
-import com.example.mall.auth.Request.UserLoginRequestDto;
-import com.example.mall.auth.Request.UserSignRequestDto;
-import com.example.mall.auth.Response.UserLoginResponseDto;
-import com.example.mall.auth.Response.UserSignResponseDto;
+import com.example.mall.auth.Request.UserRequestDto.UserLoginRequestDto;
+import com.example.mall.auth.Request.UserRequestDto.UserSignRequestDto;
+import com.example.mall.auth.Response.UserResponseDto.UserLoginResponseDto;
+import com.example.mall.auth.Response.UserResponseDto.UserSignResponseDto;
 
 public interface UserService {
 

@@ -1,7 +1,6 @@
-package com.example.mall.auth.Response;
+package com.example.mall.auth.Response.ArticleResponseDto;
 
 import com.example.mall.domain.ArticleStatus;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 

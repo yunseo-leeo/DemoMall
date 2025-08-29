@@ -1,8 +1,6 @@
-package com.example.mall.auth.Request;
+package com.example.mall.auth.Request.ArticleRequestDto;
 
 import com.example.mall.domain.ArticleStatus;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

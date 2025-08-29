@@ -1,4 +1,4 @@
-package com.example.mall.auth.Response;
+package com.example.mall.auth.Response.ArticleResponseDto;
 
 import com.example.mall.domain.ArticleStatus;
 import com.example.mall.domain.Entity.User;

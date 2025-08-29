@@ -22,7 +22,9 @@ public interface ArticleMapper {
 
     ArticleSearchResponseDto toSearchDto(Article article);
 
-    ArticleUpdateResponseDto toUpdateDto(ArticleUpdateRequestDto dto, @MappingTarget Article article);
+    void toUpdateFromDto(ArticleUpdateRequestDto dto, @MappingTarget Article article);
+
+    ArticleUpdateResponseDto toUpdateDto(Article article);
 
 
 

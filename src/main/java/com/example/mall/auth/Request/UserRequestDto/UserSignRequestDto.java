@@ -20,7 +20,7 @@ public class UserSignRequestDto {
 
     @NotBlank(message = "비밀번호를 작성해주세요.")
     @Size(min = 8, max = 15, message = "비밀번호는 최소 8자 이상, 최대 15자 이하여야 합니다.")
-    @Pattern( regexp = "^[a-z0-9A-Z]+$", message = "닉네임은 영문과 숫자로만 작성해주세요.")
+    @Pattern( regexp = "^[a-z0-9A-Z]+$", message = "비밀번호는 영문과 숫자로만 작성해주세요.")
     private String password;
 
     @NotBlank(message = "이메일을 작성해주세요.")

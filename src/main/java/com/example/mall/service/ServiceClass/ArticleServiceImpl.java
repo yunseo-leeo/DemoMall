@@ -70,12 +70,15 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    @Transactional
     public ArticleUpdateResponseDto updateArticle(Long id, ArticleUpdateRequestDto articleUpdateRequestDto){
 
         Article article = articleRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("존재하지 않는 게시물입니다."));
 
-        return articleMapper.toUpdateDto(articleUpdateRequestDto, article);
+        articleMapper.toUpdateFromDto(articleUpdateRequestDto, article);
+
+        return articleMapper.toUpdateDto(article);
     }
 
     @Override

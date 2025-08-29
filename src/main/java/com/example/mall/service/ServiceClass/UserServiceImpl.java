@@ -1,5 +1,7 @@
 package com.example.mall.service.ServiceClass;
 
+import com.example.mall.auth.Request.UserRequestDto.UserUpdateRequestDto;
+import com.example.mall.auth.Response.UserResponseDto.UserUpdateResponseDto;
 import com.example.mall.domain.Entity.User;
 import com.example.mall.security.JwtTokenProvider;
 import com.example.mall.auth.Request.UserRequestDto.UserLoginRequestDto;
@@ -65,9 +67,16 @@ public class UserServiceImpl implements UserService {
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
                 .build();
-        }
-
-
-
     }
+
+    public UserUpdateResponseDto UpdateUser(Long id, UserUpdateRequestDto userUpdateRequestDto){
+
+        User user = userRepository.findByEmail()
+    }
+
+
+
+
+
+}
 

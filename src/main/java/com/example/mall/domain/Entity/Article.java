@@ -49,7 +49,7 @@ public class Article {
     @JoinColumn(
             name = "user_id",
             nullable = false,
-            foreignKey = @ForeignKey(name = "fk_aritcle_user")
+            foreignKey = @ForeignKey(name = "fk_article_user")
     )
     private User user;
 

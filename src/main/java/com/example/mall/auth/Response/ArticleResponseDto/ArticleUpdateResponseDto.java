@@ -2,8 +2,10 @@ package com.example.mall.auth.Response.ArticleResponseDto;
 
 import com.example.mall.domain.ArticleStatus;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @AllArgsConstructor
 public class ArticleUpdateResponseDto {
 

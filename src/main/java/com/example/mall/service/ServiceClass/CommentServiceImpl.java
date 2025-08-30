@@ -1,7 +1,9 @@
 package com.example.mall.service.ServiceClass;
 
 import com.example.mall.auth.Request.CommentRequsetDto.CommentPostRequestDto;
+import com.example.mall.auth.Request.CommentRequsetDto.CommentUpdateRequestDto;
 import com.example.mall.auth.Response.CommentResponseDto.CommentPostResponseDto;
+import com.example.mall.auth.Response.CommentResponseDto.CommentUpdateResponseDto;
 import com.example.mall.domain.Entity.Article;
 import com.example.mall.domain.Entity.Comment;
 import com.example.mall.domain.Entity.User;
@@ -13,6 +15,8 @@ import com.example.mall.service.ServiceInterface.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
@@ -41,12 +45,21 @@ public class CommentServiceImpl implements CommentService {
                 throw new RuntimeException("<대댓글은 같은 게시물에만 작성할 수 있습니다.");
             }
         }
-        
+
         Comment comment = commentMapper.toPostEntity(user, article, commentPostRequestDto, parent);
 
         commentRepository.save(comment);
 
         return commentMapper.toPostDto(comment);
+    }
+
+    public CommentUpdateResponseDto updateComment(Long id, CommentUpdateRequestDto commentUpdateRequestDto) {
+        Comment comment = commentRepository.findByCommentId(id)
+                .orElseThrow(() -> new NoSuchElementException("댓글이 존재하지 않습니다."));
+
+        commentMapper.toUpdateFromDto(commentUpdateRequestDto, comment);
+
+        return commentMapper.toUpdateDto(comment);
     }
 
 

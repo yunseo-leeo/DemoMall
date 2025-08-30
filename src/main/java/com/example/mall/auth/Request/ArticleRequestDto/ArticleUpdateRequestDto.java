@@ -4,9 +4,11 @@ import com.example.mall.domain.ArticleStatus;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class ArticleUpdateRequestDto {
     
     @Size(max = 30, message = "게시물 제목은 30자 이내로 작성해주세요.")

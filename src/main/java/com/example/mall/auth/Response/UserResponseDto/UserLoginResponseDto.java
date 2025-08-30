@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 @Builder
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public class UserLoginResponseDto {
 

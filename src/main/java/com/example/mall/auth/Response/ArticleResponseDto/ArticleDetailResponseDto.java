@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
-@NoArgsConstructor
 public class ArticleDetailResponseDto {
 
     @JsonProperty("ProductId")

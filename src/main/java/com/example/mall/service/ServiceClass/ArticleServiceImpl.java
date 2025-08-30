@@ -14,6 +14,7 @@ import com.example.mall.repository.ArticleRepository;
 import com.example.mall.repository.UserRepository;
 import com.example.mall.service.ServiceInterface.ArticleService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.access.AccessDeniedException;
@@ -23,7 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.NoSuchElementException;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class ArticleServiceImpl implements ArticleService {
 
     private final ArticleRepository articleRepository;

@@ -41,14 +41,8 @@ public class CommentServiceImpl implements CommentService {
                 throw new RuntimeException("<대댓글은 같은 게시물에만 작성할 수 있습니다.");
             }
         }
-
-
-        Comment comment = Comment.builder()
-                .article(article)
-                .user(user)
-                .parent(parent)
-                .content(commentPostRequestDto.getContent())
-                .build();
+        
+        Comment comment = commentMapper.toPostEntity(user, article, commentPostRequestDto, parent);
 
         commentRepository.save(comment);
 

@@ -41,7 +41,6 @@ public class Comment {
     private List<Comment> children = new ArrayList<>();
 
     @Column(nullable = false)
-    @Size(max = 100, message = "댓글은 100자 이하로 작성해주세요.")
     private String content;
 
     @CreatedDate
